@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const server = 'localhost:27017'; // REPLACE WITH YOUR DB SERVER
-const database = 'schoolmgt';  
+const database = 'timeoffdb';  
 
 
 class Database {

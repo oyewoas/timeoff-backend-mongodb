@@ -11,19 +11,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/oyewoas/levelup-express-mongo.git"
+    "url": "git+https://github.com/oyewoas/timeoff-backend-mongodb.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/oyewoas/levelup-express-mongo/issues"
+    "url": "https://github.com/oyewoas/timeoff-backend-mongodb/issues"
   },
-  "homepage": "https://github.com/oyewoas/levelup-express-mongo#readme",
+  "homepage": "https://github.com/oyewoas/timeoff-backend-mongodb#readme",
   "dependencies": {
     "bcrypt": "^3.0.6",
     "cors": "^2.8.5",
     "express": "^4.16.4",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.5.2"
   },
   "devDependencies": {

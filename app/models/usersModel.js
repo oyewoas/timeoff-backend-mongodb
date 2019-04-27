@@ -39,6 +39,7 @@ const UsersSchema = new Schema({
     password: {
         type: String,
         required: true,
+        select: false
     },
     country: {
         type: String,

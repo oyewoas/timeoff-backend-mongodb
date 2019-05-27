@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
-const server = 'localhost:27017'; // REPLACE WITH YOUR DB SERVER
-const database = 'timeoffdb';  
+const env = require('../../env');
 
 
 class Database {
@@ -8,7 +7,7 @@ class Database {
       this.dbConnect();
     }
     dbConnect() {
-       mongoose.connect(`mongodb://${server}/${database}`)
+       mongoose.connect(`${env.mongodb_url}`, { useNewUrlParser: true, useCreateIndex: true})
          .then(() => {
            console.log('Database connection successful');
            

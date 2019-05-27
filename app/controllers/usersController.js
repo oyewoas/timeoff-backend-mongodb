@@ -1,7 +1,7 @@
 const UsersModel = require('../models/usersModel');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const SECRET = 'AWESOMETIMEOFF';
+const env = require('../../env');
 
 const index = function(req, res) {
     res.send('NOT IMPLEMENTED: Site Home Page');
@@ -16,7 +16,7 @@ const createUser = async (req, res) => {
 
       delete response.password;
 
-      const token = jwt.sign({ id: user.id }, SECRET, { expiresIn: '1h' });
+      const token = jwt.sign({ id: user.id }, env.secret, { expiresIn: '1h' });
       res.status(200).json({
         status: 'success',
         data: { user: response, token },
@@ -66,7 +66,7 @@ const createUser = async (req, res) => {
           .status(401)
           .json({ status: 'error', message: 'Invalid password' });
   
-      const token = jwt.sign({ id: user.id }, SECRET);
+      const token = jwt.sign({ id: user.id }, env.secret);
       res.json({status: 'success', data: { token }});
     } catch (err) {
       res.status(500).json({ status: 'error', message: 'An error occured' });
